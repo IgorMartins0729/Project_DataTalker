@@ -62,10 +62,15 @@ question = "qual o departamento do sabonete?"
 
 def generate(question):
     schema = """
-    CREATE TABLE produtos (
-      nome VARCHAR(50),
-      departmento VARCHAR(50),
-    );
+    Table: produtos
+    Columns: 
+    - id (INTEGER): The unique ID.
+    - nome (TEXT): The name of the product. Examples: 'sabonete', 'agua'.
+    - departamento (TEXT): The department the product belongs to. Examples: 'higiene', 'bebidas'.
+    - data_fabri (TEXT): The manufacturing date.
+    - data_venci (TEXT): The expiration date.
+    
+    Return ONLY a pure SELECT SQL query. Do not wrap in ```sql.
     """
     generator = ReliableSQLGenerator()
     sql = generator.forward(schema, question)
