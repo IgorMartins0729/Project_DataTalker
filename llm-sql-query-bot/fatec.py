@@ -80,7 +80,7 @@ def generate(question):
     return results
 
 API_TOKEN = ''
-bot = telebot.TeleBot('8357392470:AAFGTCAubSF6bFFyUY28P5b0N9otzFJi2ck')
+bot = telebot.TeleBot('token')
 
 @bot.message_handler(func=lambda message: True)
 def reply_hi(message):
